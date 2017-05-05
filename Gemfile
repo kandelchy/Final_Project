@@ -29,6 +29,7 @@ gem 'devise'
 # Geographic location service
 gem 'geocoder'
 
+
 # Simulate a shopping cart
 #gem 'acts_as_shopping_cart', '~> 0.4.0'
 

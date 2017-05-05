@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :maplocations
   resources :reviews
   resources :purchases
   resources :books, :authors
