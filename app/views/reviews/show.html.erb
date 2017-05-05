@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user_id %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @review.book_id %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @review.rate %>
+</p>
+
+<p>
+  <strong>Rev text:</strong>
+  <%= @review.rev_text %>
+</p>
+
+<p>
+  <strong>Rev date:</strong>
+  <%= @review.rev_date %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+
+<% if params[:book_id].present? %>
+    <%= link_to 'Back', book_path(params[:book_id]) %>    
+<% else %>
+    <%= link_to 'Back', reviews_path %>
+<% end %>
+

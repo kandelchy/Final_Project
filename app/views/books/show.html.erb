@@ -41,9 +41,23 @@
 </table>
 
 
+<% link_to 'Edit', edit_book_path(@book) %>
+<%= link_to 'Add Review', new_review_path(book_id: @book.id) %> |
+<%= link_to 'Buy', new_purchase_path(book_id: @book.id) %> |
+<%= link_to 'Back', books_path %> 
 
+<br>
+<br>
+<br>
 
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <% @book.reviews.each do |review| %>
+    <strong>User: </strong>
+    <%= review.user.email %><br>
+    <strong>Rate: </strong>
+    <%= review.rate %><br>
+    <%= review.rev_text %><br>
+    <strong>Date: </strong>
+    <%= review.rev_date %><br><br><br>
+  <% end %>
+  </tbody>
+</table>

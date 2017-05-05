@@ -1,5 +1,15 @@
 <h1>New Book</h1>
 
-<%= render 'form' %>
+
+<% if user_signed_in? %>
+    <div>Signed in as... <%= current_user.email %></div>
+    <% if current_user.email == 'kandelchy@gmail.com' %>
+        <div>Signed in as... <%= current_user.email %></div>
+        <%= render 'form' %>
+    <% else %>
+        <div>Add books is an Admin feature... </div>
+    <% end %>
+<% end %>
 
 <%= link_to 'Back', books_path %>
+ 
