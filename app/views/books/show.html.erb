@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 
-<table>
+<table class = "table table-stripped">
   <tbody>
     <tr>
       <td>
         <p>
           <strong>Title:</strong>
           <%= @book.title %>
-        </p>        
+        </p>
         <p>
           <strong>Isbn:</strong>
           <%= @book.isbn %>
@@ -32,7 +32,7 @@
       </td>
       <td>
         <p>
-          <td><%= image_tag @book.photo %></td>
+          <td><%= image_tag @book.photo, class:"img-rounded" %></td>
         </p>        
       </td>
     </tr>
@@ -41,9 +41,23 @@
 </table>
 
 
+<% link_to 'Edit', edit_book_path(@book) %>
+<%= link_to 'Add Review', new_review_path(book_id: @book.id) %> |
+<%= link_to 'Buy', new_purchase_path(book_id: @book.id) %> |
+<%= link_to 'Back', books_path %> 
 
+<br>
+<br>
+<br>
 
-
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <% @book.reviews.each do |review| %>
+    <strong>User: </strong>
+    <%= review.user.email %><br>
+    <strong>Rate: </strong>
+    <%= review.rate %><br>
+    <%= review.rev_text %><br>
+    <strong>Date: </strong>
+    <%= review.rev_date %><br><br><br>
+  <% end %>
+  </tbody>
+</table>

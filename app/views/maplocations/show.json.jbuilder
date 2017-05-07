@@ -1,0 +1,1 @@
+json.partial! "maplocations/maplocation", maplocation: @maplocation

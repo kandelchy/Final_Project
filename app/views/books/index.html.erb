@@ -2,32 +2,30 @@
 
 <h1>Listing Books</h1>
 
-<table>
+<%= link_to 'Add books', new_book_path %> |
+<%= link_to 'Map', new_maplocation_path(book_id: 1) %> |
+<%= link_to 'My Blog' %> |
+<%= link_to 'Contact us' %>
+<br><br><br>
+
+<table class="table table-stripped">
   <thead>
     <tr>
-
       <th>Title</th>
       <th>Author</th>
       <th>Category</th>
       <th>Price</th>
-      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @books.each do |book| %>
       <tr>
-
         <td><%= link_to book.title, book %></td>
         <td><%= book.author.full_author_name %></td>
         <td><%= book.category %></td>
         <td><%= book.price %></td>
-        <th>&nbsp&nbsp&nbsp</th>
-        <td><%= image_tag book.photo %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag book.photo, class:"img-rounded" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,3 +33,8 @@
 
 <br>
 
+
+<%= link_to 'Add books', new_book_path %> |
+<%= link_to 'Map', new_maplocation_path(book_id: 1) %> |
+<%= link_to 'My Blog' %> |
+<%= link_to 'Contact us' %>

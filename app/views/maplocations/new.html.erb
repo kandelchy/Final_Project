@@ -1,0 +1,16 @@
+<h1>City Library</h1>
+
+<% result = request.location %><br>    
+<%= result.address %>    <br>
+<% result.city %><br>
+<% result.state %><br>
+
+<% @maplocation.address = "Library #{result.city}  #{result.state}" %>
+
+
+<%= render 'form' %>
+
+
+<%= link_to 'Back', books_path(params[:book_id]) %>    
+
+
