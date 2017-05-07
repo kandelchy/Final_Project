@@ -1,4 +1,7 @@
 class MaplocationsController < ApplicationController
+
+  skip_before_action :authenticate_user!
+  
   before_action :set_maplocation, only: [:show, :edit, :update, :destroy]
 
   # GET /maplocations

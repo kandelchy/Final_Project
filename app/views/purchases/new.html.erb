@@ -1,5 +1,10 @@
 <h1>New Purchase</h1>
 
+<% @purchase.user_id = current_user.id %>
+<% @purchase.book_id = params[:book_id] %>
+<% @purchase.quantity = 1 %>
+<% @purchase.date = Date.today %>
+
 <%= render 'form' %>
 
 <% if params[:book_id].present? %>

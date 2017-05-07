@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 
-<table>
+<table class = "table table-stripped">
   <tbody>
     <tr>
       <td>
         <p>
           <strong>Title:</strong>
           <%= @book.title %>
-        </p>        
+        </p>
         <p>
           <strong>Isbn:</strong>
           <%= @book.isbn %>
@@ -32,7 +32,7 @@
       </td>
       <td>
         <p>
-          <td><%= image_tag @book.photo %></td>
+          <td><%= image_tag @book.photo, class:"img-rounded" %></td>
         </p>        
       </td>
     </tr>
