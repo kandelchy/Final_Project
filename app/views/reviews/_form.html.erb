@@ -10,16 +10,16 @@
       </ul>
     </div>
   <% end %>
-  <fieldset disabled>
+
   <div class="form-group">
     <%= f.label :user_id %><br>
-    <%= f.select :user_id, User.all.collect {|p| [p.email, p.id]}, include_blank: true %> 
+    <%= f.select :user_id, User.all.collect {|p| [p.email, p.id]}, include_blank: true %> <br>
   </div>
   <div class="form-group">
     <%= f.label :book_id %><br>
     <%= f.select :book_id, Book.all.collect {|p| [p.title, p.id]}, include_blank: true %> 
   </div>
-  </fieldset>
+
   <div class="form-group">
     <%= f.label :rate %><br>
     <%= f.text_field :rate, class: "form-control" %>
