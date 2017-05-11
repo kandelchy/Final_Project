@@ -1,17 +1,6 @@
 <h1>New Book</h1>
 
-
-<% if user_signed_in? %>
-    <% if current_user.email == 'kandelchy@gmail.com' %>
-        <div>Signed in as... <%= current_user.email %></div>
-        <%= render 'form' %>
-    <% else %>
-        <div>Add books is an Admin feature... </div>
-    <% end %>
-<%else%>
-    <p>Adding books requires Login in please</p>    
-<% end %>
-<br>
+<%= render 'form' %>
 
 <%= link_to 'Back', books_path %>
  
