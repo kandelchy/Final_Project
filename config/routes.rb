@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions'}
   root to: 'books#index'
 
-
+  match 'contact' => 'contact#new', :as => 'contact1', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
 end

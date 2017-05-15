@@ -10,7 +10,9 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    # @books = Book.all
+    @books = Book.where(nil) # creates an anonymous scope
+    @books = @books.category(params[:category]) if params[:category].present?
   end
 
   # GET /books/1

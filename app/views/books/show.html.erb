@@ -5,36 +5,61 @@
   <tbody>
     <tr>
       <td>
-        <p>
           <strong>Title:</strong>
-          <%= @book.title %>
-        </p>
-        <p>
-          <strong>Isbn:</strong>
-          <%= @book.isbn %>
-        </p>
-        <p>
-          <strong>Author:</strong>
-          <%= @book.author.full_author_name %>
-        </p>
-        <p>
-          <strong>Category:</strong>
-          <%= @book.category %>
-        </p>
-        <p>
-          <strong>Price:</strong>
-          <%= @book.price %>
-        </p>
-        <p>
-          <strong>Description:</strong>
-          <%= @book.description %>
-        </p>
       </td>
       <td>
-        <p>
-          <td><%= image_tag @book.photo, class:"img-rounded" %></td>
-        </p>        
+          <%= @book.title %>
       </td>
+      <td>
+        <td rowspan="6">
+        <%= image_tag @book.photo, class:"img-rounded" %>        
+      </td>
+
+    </tr>
+    <tr>
+      <td>
+          <strong>Isbn:</strong>
+      </td>
+      <td>
+          <%= @book.isbn %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+          <strong>Author:</strong>
+      </td>
+      <td>
+          <%= @book.author.full_author_name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <strong>Category:</strong>
+      </td>
+      <td>
+          <%= @book.category %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <strong>Price:</strong>
+      </td>
+      <td>
+          <%= number_to_currency(@book.price) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <strong>Description:</strong>
+      </td>
+      <td>
+          <%= @book.description %>
+      </td>
+    </tr>        
+
+
+
     </tr>
 
   </tbody>
@@ -50,14 +75,28 @@
 <br>
 <br>
 
-  <% @book.reviews.each do |review| %>
-    <strong>User: </strong>
-    <%= review.user.email %><br>
-    <strong>Rate: </strong>
-    <%= review.rate %><br>
-    <%= review.rev_text %><br>
-    <strong>Date: </strong>
-    <%= review.rev_date %><br><br><br>
-  <% end %>
+<table class="table table-stripped" >
+  <thead>
+    
+  </thead>
+  <tbody>
+    <% @book.reviews.each do |review| %>
+      <tr>
+        <td><strong>User: </strong>
+        <%= review.user.email %></td>
+      </tr>
+      <tr>
+        <td><strong>Rate: </strong>
+        <%= review.rate %></td>
+      </tr>
+      <tr>
+        <td><%= review.rev_text %>
+      </tr>
+      <tr>
+        <td><strong>Date: </strong>
+        <%= review.rev_date %><br><br><br></td>
+      </tr>
+    <% end %>    
   </tbody>
 </table>
+

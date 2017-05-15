@@ -7,4 +7,6 @@ class Book < ActiveRecord::Base
     validates_presence_of :title, :isbn
     validates_uniqueness_of :isbn
     
+    scope :category, -> (category) { where category: category }
+    
 end

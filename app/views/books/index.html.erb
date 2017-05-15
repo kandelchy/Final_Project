@@ -1,21 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-
-
-<% if user_signed_in? %>
-  <% if current_user.email == 'kandelchy@gmail.com' %>
-    <%= link_to 'Add books', new_book_path %> |
-    <%= link_to 'Add Blog', '/blog/monologue' %> |
-  <%end%>  
-<%end%>  
-<%= link_to 'Map', new_maplocation_path(book_id: 1) %> |
-<%= link_to 'My Blog', '/blog' %> |  
-<%= link_to 'Contact us' %>
-<br>
-<h1>Books List</h1>
 <br><br>
 
-<table class="table table-stripped">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -28,10 +15,10 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= link_to book.title, book %></td>
-        <td><%= book.author.full_author_name %></td>
-        <td><%= book.category %></td>
-        <td><%= book.price %></td>
+        <td><strong><%= link_to book.title, book %></strong></td>
+        <td><strong><%= book.author.full_author_name %></strong></td>
+        <td><strong><%= book.category %></strong></td>
+        <td><strong><%= number_to_currency(book.price) %></strong></td>
         <td><%= image_tag book.photo, class:"img-rounded" %></td>
       </tr>
     <% end %>

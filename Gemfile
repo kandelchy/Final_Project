@@ -30,9 +30,6 @@ gem 'monologue', '~> 0.5.0'
 # Login screen
 gem 'devise'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.11'
-
 # Geographic location service
 gem 'geocoder'
 
