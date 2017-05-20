@@ -2,6 +2,8 @@
 
 <br><br>
 
+
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -19,7 +21,9 @@
         <td><strong><%= book.author.full_author_name %></strong></td>
         <td><strong><%= book.category %></strong></td>
         <td><strong><%= number_to_currency(book.price) %></strong></td>
-        <td><%= image_tag book.photo, class:"img-rounded" %></td>
+        <td><%= image_tag book.image.thumb.url, class:"img-rounded" %></td>
+        
+
       </tr>
     <% end %>
   </tbody>

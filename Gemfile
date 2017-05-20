@@ -33,12 +33,8 @@ gem 'devise'
 # Geographic location service
 gem 'geocoder'
 
-
-
-# Simulate a shopping cart
-#gem 'acts_as_shopping_cart', '~> 0.4.0'
-
-
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 
 
 # Use Unicorn as the app server

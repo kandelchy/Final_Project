@@ -7,6 +7,8 @@ class Book < ActiveRecord::Base
     validates_presence_of :title, :isbn
     validates_uniqueness_of :isbn
     
+    mount_uploader :image, ImageUploader
+    
     scope :category, -> (category) { where category: category }
     
 end
