@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <br><br>
 
 
@@ -31,13 +33,8 @@
 
 <br>
 
-<% if user_signed_in? %>
-  <% if current_user.email == 'kandelchy@gmail.com' %>
-    <%= link_to 'Add books', new_book_path %> |
-    <%= link_to 'Add Blog', '/blog/monologue' %> |
-  <%end%>  
-<%end%>  
-<%= link_to 'Map', new_maplocation_path(book_id: 1) %> |
-<%= link_to 'My Blog', '/blog' %> |
-<%= link_to 'Contact us' %>
-<br><br><br>
+
+
+<% if @books.blank? %>
+  <h4>There are no Books containing the term <%= params[:search] %>.</h4>
+<% end %>

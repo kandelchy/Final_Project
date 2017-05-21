@@ -13,6 +13,13 @@ class BooksController < ApplicationController
     # @books = Book.all
     @books = Book.where(nil) # creates an anonymous scope
     @books = @books.category(params[:category]) if params[:category].present?
+  
+    if params[:search]
+      @books = Book.search(params[:search]).order("created_at DESC")
+    else
+      @books = Book.all.order("created_at DESC")
+    end  
+  
   end
 
   # GET /books/1
@@ -79,4 +86,6 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:isbn, :title, :author_id, :category, :description, :price, :image)
     end
+    
+    
 end

@@ -11,4 +11,8 @@ class Book < ActiveRecord::Base
     
     scope :category, -> (category) { where category: category }
     
+    def self.search(search)
+        where("title LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%") 
+    end
+    
 end
