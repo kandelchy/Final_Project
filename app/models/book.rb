@@ -9,10 +9,15 @@ class Book < ActiveRecord::Base
     
     mount_uploader :image, ImageUploader
     
-    scope :category, -> (category) { where category: category }
-    
+    # scope :category, -> (category) { where category: category }
+
     def self.search(search)
-        where("title LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%") 
+        if search
+            where("title LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%")
+        else
+            where(nil)
+        end
     end
     
+
 end

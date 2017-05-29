@@ -1,5 +1,5 @@
 Monologue.config do |config|
-  config.site_name = "eBook Store Blog"
+  config.site_name = "eBookstore Blog"
   config.site_subtitle = "Review book in the store"
   config.site_url = "http://example.com"
 
@@ -10,8 +10,8 @@ Monologue.config do |config|
   config.posts_per_page = 10
   config.preview_size = 1000
 
-  config.disqus_shortname = "my_disqus_shortname"
-
+  # config.disqus_shortname = "my_disqus_shortname"
+  config.disqus_shortname = "https-ebookstore-mustbecoder-c9users-io-1"
   # LOCALE
   config.twitter_locale = "en" # "fr"
   config.facebook_like_locale = "en_US" # "fr_CA"

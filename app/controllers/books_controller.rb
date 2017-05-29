@@ -5,20 +5,21 @@ class BooksController < ApplicationController
   
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-  
+  helper_method :sort_column, :sort_direction
 
   # GET /books
   # GET /books.json
   def index
     # @books = Book.all
-    @books = Book.where(nil) # creates an anonymous scope
-    @books = @books.category(params[:category]) if params[:category].present?
+    # @books = Book.where(nil) # creates an anonymous scope
+    # @books = @books.category(params[:category]) if params[:category].present?
   
-    if params[:search]
-      @books = Book.search(params[:search]).order("created_at DESC")
-    else
-      @books = Book.all.order("created_at DESC")
-    end  
+    # @books = Book.search(params[:search]).order("title" + " " + direction).paginate(:per_page => 3, :page => params[:page])
+    
+    
+    
+    
+    @books = Book.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   
   end
 
@@ -87,5 +88,11 @@ class BooksController < ApplicationController
       params.require(:book).permit(:isbn, :title, :author_id, :category, :description, :price, :image)
     end
     
+    def sort_column
+      Book.column_names.include?(params[:sort])?  params[:sort] : "title"
+    end
     
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end

@@ -1,12 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Address:</strong>
   <%= @maplocation.address %>
 </p>
-
-
-
 
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@maplocation.latitude}%2C#{@maplocation.longitude}" %> 
@@ -20,4 +18,3 @@
 
 
 
-<%= link_to 'Back', books_path(params[1]) %>    

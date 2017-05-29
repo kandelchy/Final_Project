@@ -36,6 +36,8 @@ gem 'geocoder'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

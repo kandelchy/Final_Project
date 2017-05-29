@@ -4,6 +4,8 @@ class MaplocationsController < ApplicationController
   
   before_action :set_maplocation, only: [:show, :edit, :update, :destroy]
 
+  
+
   # GET /maplocations
   # GET /maplocations.json
   def index

@@ -1,13 +1,13 @@
 <h1>City Library</h1>
 
-<% result = request.location %><br>    
 
 
-<%= result.address %><br>
-<% result.city %><br>
-<% result.state %><br>
+<% @city = request.location.city %><br>
+<% @state = request.location.state %><br>
 
-<% @maplocation.address = "Library #{result.city}  #{result.state}" %>
+
+
+<% @maplocation.address = "Library #{@city}  #{@state}" %>
 
 
 <%= render 'form' %>
